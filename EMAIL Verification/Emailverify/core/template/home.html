@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main_content%}
+
+<!-- {% if messages %}
+    {% for msg in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{msg}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+{% endif %} -->
+
+ <div class="container row  justify-content-around mt-5">
+     <div class="col-sm-4 text-black"><h5><strong>
+              Wellcome You have Learned the User account Verification using Email in Django 
+              {% if messages %}
+                  {% for msg in messages %}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <strong>{{msg}}</strong> 
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  {% endfor %}
+              {% endif %}
+      </strong></h5></div>
+ </div>
+               
+{% endblock %}

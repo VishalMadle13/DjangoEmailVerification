@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block main_content %}
+
+    <div class="container">
+        <div class="row justify-content-around mt-5">
+            <div class="col-sm-4 text-white"><h4>Sign Up</h4></div>
+
+        </div>
+        <div class="row justify-content-around round mt-5">
+            <div class="col-sm-4 round text-white  "  >
+                <form action="" method="POST" class="bg-black round shadow p-2" >
+                    {% if messages %}
+                        {% for msg in messages %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>{{msg}}</strong> 
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% csrf_token %}
+                    {% if fm.errors %}
+                        {{fm.errors}}
+                    {% endif%}
+                    {% for fm in form %}
+                        {{ fm.label_tag }}
+                        {{ fm }}
+                        {{ fm.errors }}
+                        {{ fm.non_field_errors }}
+                        {{ fm.non_form_errors }}
+                    {% endfor %}
+
+                    <input type="submit" value="Sign Up" class="btn btn-primary mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock main_content %}
